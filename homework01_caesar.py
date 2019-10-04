@@ -40,7 +40,7 @@ def decrypt_caesar(str):
     print(f"Decoded message: {answer_decoded}")
     return answer_decoded
 
-encrypt_caesar(input_text)
-decrypt_caesar(input_text)
+encrypt_caesar(input_text):
+decrypt_caesar(input_text):
 
 input("")
