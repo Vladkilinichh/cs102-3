@@ -1,6 +1,15 @@
 def encrypt_caesar(plaintext):
-    step = 3
+    """
+    Encrypts plaintext using a Vigenere cipher.
+    >>> encrypt_vigenere("PYTHON", "A")
+    'PYTHON'
+    >>> encrypt_vigenere("python", "a")
+    'python'
+    >>> encrypt_vigenere("ATTACKATDAWN", "LEMON")
+    'LXFOPVEFRNHR'
+    """
     ciphertext = ""
+    step = 3
     for l in plaintext:
         if 65 <= ord(l) <= 90:
             code_step = ord(l) + step
