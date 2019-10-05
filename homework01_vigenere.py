@@ -1,8 +1,16 @@
-input_text = input("Enter the text: ") 
-def enter_key():
+def encrypt_vigenere(plaintext, keyword):
+    """
+    Encrypts plaintext using a Vigenere cipher.
+    >>> encrypt_vigenere("PYTHON", "A")
+    'PYTHON'
+    >>> encrypt_vigenere("python", "a")
+    'python'
+    >>> encrypt_vigenere("ATTACKATDAWN", "LEMON")
+    'LXFOPVEFRNHR'
+    """
+    input_text = input("Enter the text: ")
     global input_step
     input_step = input("Enter the key: ")
-enter_key()
 
 step = []
 
@@ -15,15 +23,16 @@ for i in input_step:
         print("Please enter only letters")
         enter_key()
 
-def encrypt_caesar(str):
+
+def encrypt_vigenere(plaintext, keyword):
     number = 0
-    answer_encoded = ""
+    ciphertext = ""
     for l in str:
         if 65 <= ord(l) <= 90:
             code_step = ord(l) + step[number]
             if code_step > 90:
                 code_step -= 26
-            answer_encoded += chr(code_step)
+            ciphertext += chr(code_step)
             number += 1
             if number == len(step):
                 number = 0
@@ -31,25 +40,35 @@ def encrypt_caesar(str):
             code_step = ord(l) + step[number]
             if code_step > 122:
                 code_step -= 26
-            answer_encoded += chr(code_step)
+            ciphertext += chr(code_step)
             number += 1
             if number == len(step):
                 number = 0
         else:
-            answer_encoded += l
+            ciphertext += l
     print("")
     print(f"Encoded message: {answer_encoded}")
-    return answer_encoded
+    return ciphertext
 
-def decrypt_caesar(str):
+
+def encrypt_vigenere(plaintext, keyword):
+    """
+    Decrypts a ciphertext using a Vigenere cipher.
+    >>> decrypt_vigenere("PYTHON", "A")
+    'PYTHON'
+    >>> decrypt_vigenere("python", "a")
+    'python'
+    >>> decrypt_vigenere("LXFOPVEFRNHR", "LEMON")
+    'ATTACKATDAWN'
+    """
     number = 0
-    answer_decoded = ""
+    plaintext = ""
     for l in str:
         if 65 <= ord(l) <= 90:
             code_step = ord(l) - step[number]
             if code_step < 65:
                 code_step += 26
-            answer_decoded += chr(code_step)
+            plaintext += chr(code_step)
             number += 1
             if number == len(step):
                 number = 0
@@ -57,12 +76,12 @@ def decrypt_caesar(str):
             code_step = ord(l) - step[number]
             if code_step < 97:
                 code_step += 26
-            answer_decoded += chr(code_step)
+            plaintext += chr(code_step)
             number += 1
             if number == len(step):
                 number = 0
         else:
-            answer_decoded += l
+            plaintext += l
     print("")
     print(f"Decoded message: {answer_decoded}")
     return answer_decoded
