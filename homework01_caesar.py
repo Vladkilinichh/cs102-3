@@ -1,4 +1,4 @@
-def encrypt_caesar(plaintext):
+ddef encrypt_caesar(plaintext):
     """
     Encrypts plaintext using a Vigenere cipher.
     >>> encrypt_vigenere("PYTHON", "A")
@@ -29,6 +29,17 @@ def encrypt_caesar(plaintext):
 
 
 def decrypt_caesar(ciphertext):
+    """
+    Decrypts a ciphertext using a Caesar cipher.
+    >>> decrypt_caesar("SBWKRQ")
+    'PYTHON'
+    >>> decrypt_caesar("sbwkrq")
+    'python'
+    >>> decrypt_caesar("Sbwkrq3.6")
+    'Python3.6'
+    >>> decrypt_caesar("")
+    ''
+    """
     step = 3
     plaintext = ""
     for l in ciphertext:
