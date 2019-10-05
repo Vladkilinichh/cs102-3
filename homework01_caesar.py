@@ -18,6 +18,7 @@ def encrypt_caesar(plaintext):
     print(f"Encoded message: {ciphertext}")
     return ciphertext
 
+
 def decrypt_caesar(ciphertext):
     step = 3
     plaintext = ""
@@ -40,7 +41,5 @@ def decrypt_caesar(ciphertext):
 
 # ---- ДЛЯ ТЕСТИРОВАНИЯ ----
 input_text = input('Enter the text: ')
-encrypt_caesar(input_text)
-decrypt_caesar(input_text)
+
 input("")
-#---------------------------
