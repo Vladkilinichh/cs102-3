@@ -1,6 +1,4 @@
-
-
-input_text = input("Enter the text: ") # Тут мы просим пользователя ввести текст, который ему нужно закодировать/раскодировать. Записываем мы это в переменную input_text
+input_text = input("Enter the text: ") 
 def enter_key():
     global input_step
     input_step = input("Enter the key: ")
@@ -17,7 +15,6 @@ for i in input_step:
         print("Please enter only letters")
         enter_key()
 
-# Тут мы сдвигаем каждую букву на 3 вправо, т.е. шифруем
 def encrypt_caesar(str):
     number = 0
     answer_encoded = ""
@@ -44,8 +41,6 @@ def encrypt_caesar(str):
     print(f"Encoded message: {answer_encoded}")
     return answer_encoded
 
-
-# А тут мы сдвигаем каждую букву на 3 влево, т.е. расшифровываем
 def decrypt_caesar(str):
     number = 0
     answer_decoded = ""
@@ -71,9 +66,3 @@ def decrypt_caesar(str):
     print("")
     print(f"Decoded message: {answer_decoded}")
     return answer_decoded
-
-encrypt_caesar(input_text)
-decrypt_caesar(input_text)
-
-
-input("")
