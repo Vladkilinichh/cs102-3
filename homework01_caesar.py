@@ -9,36 +9,47 @@ def encrypt_caesar(plaintext):
     >>> encrypt_caesar("")
     ''
     """
+ ciphertext = ''
  step = 3
-    answer_encoded = ""
     for l in plaintext:
         if 65 <= ord(l) <= 90:
             code_step = ord(l) + step
             if code_step > 90:
                 code_step -= 26
-            answer_encoded += chr(code_step)
+            ciphertext += chr(code_step)
         elif 97 <= ord(l) <= 122:
             code_step = ord(l) + step
             if code_step > 122:
                 code_step -= 26
-            answer_encoded += chr(code_step)
+            ciphertext += chr(code_step)
         else:
-            answer_encoded += l
-    return answer_encoded
+            ciphertext += l
+    return ciphertext
 
 def decrypt_caesar(ciphertext):
-    answer_decoded = ""
+    """
+    Decrypts a ciphertext using a Caesar cipher.
+    >>> decrypt_caesar("SBWKRQ")
+    'PYTHON'
+    >>> decrypt_caesar("sbwkrq")
+    'python'
+    >>> decrypt_caesar("Sbwkrq3.6")
+    'Python3.6'
+    >>> decrypt_caesar("")
+    ''
+    """
+    plaintext = ''
     for l in ciphertext:
         if 65 <= ord(l) <= 90:
             code_step = ord(l) - step
             if code_step < 65:
                 code_step += 26
-            answer_decoded += chr(code_step)
+            plaintext += chr(code_step)
         elif 97 <= ord(l) <= 122:
             code_step = ord(l) - step
             if code_step < 65:
                 code_step += 26
-            answer_decoded += chr(code_step)
+            plaintext += chr(code_step)
         else:
-            answer_decoded += l
-    return answer_decoded
+            plaintext += l
+    return plaintext
