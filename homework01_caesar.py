@@ -1,5 +1,3 @@
-
-
 def encrypt_caesar(plaintext):
     step = 3
     ciphertext = ""
