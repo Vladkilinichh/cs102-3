@@ -85,3 +85,4 @@ def encrypt_vigenere(plaintext, keyword):
     print("")
     print(f"Decoded message: {answer_decoded}")
     return answer_decoded
+
