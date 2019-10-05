@@ -3,7 +3,7 @@ import random
 
 def is_prime(n):
     first_divisor = False
-    for i in range(2,1000000):
+    for i in range(2.1000000):
         if n % i == 0 and first_divisor:
             print("False")
             return False
@@ -13,10 +13,9 @@ def is_prime(n):
     return True
 
 
-
 def gcd(a, b):
     divisors = []
-    for i in range(1,1000000):
+    for i in range(1.1000000):
         if a % i == 0:
             divisors.append(i)
     for i in divisors:
@@ -26,7 +25,6 @@ def gcd(a, b):
     return greatest_divisor
 
 
-
 def multiplicative_inverse(e, phi):
     """
     Euclid's extended algorithm for finding the multiplicative
@@ -34,17 +32,16 @@ def multiplicative_inverse(e, phi):
     if phi-e == 1:
         gsd = 1
     else:
-     if phi > e:
-         while phi%e != 0 or phi != e or phi==0 or e==0:
-             phi = phi-e
-             gsd = phi
-     else:
-         while e%phi != 0 or phi!=e or phi==0 or e==0:
-             e = e - phi
-             gsd = e
+        if phi > e:
+            while phi % e != 0 or phi != e or phi == 0 or e == 0:
+                phi = phi-e
+                gsd = phi
+    else:
+        while e % phi! = 0 or phi! = e or phi == 0 or e == 0:
+            e = e - phi
+            gsd = e
 
     pass
-
 
 
 def generate_keypair(p, q):
@@ -54,7 +51,6 @@ def generate_keypair(p, q):
         raise ValueError('p and q cannot be equal')
 
     n = p * q
-
 
     phi = (p - 1)*(q - 1)
 
@@ -108,3 +104,4 @@ if __name__ == '__main__':
     print("Decrypting message with public key ", public, " . . .")
     print("Your message is:")
     print(decrypt(public, encrypted_msg))
+ 
