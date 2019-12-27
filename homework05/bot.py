@@ -4,7 +4,7 @@ from datetime import datetime
 from bs4 import BeautifulSoup
 from typing import List, Tuple
 
-access_token = ''
+access_token = '811668477:AAGXDa7U_jS2Oln0ei8cKHRkQf-4WOcxrq0'
 bot = telebot.TeleBot(access_token)
 
 day_b = {'/monday': 0,
